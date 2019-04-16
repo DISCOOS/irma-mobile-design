@@ -1,0 +1,24 @@
+{
+  "name": "irma-mobile-design",
+  "version": "1.0.0",
+  "description": "Incident Response Management Application Mobile",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-html-extract": "^0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DISCOOS/irma-mobile-design.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/DISCOOS/irma-mobile-design/issues"
+  },
+  "homepage": "https://github.com/DISCOOS/irma-mobile-design#readme"
+}
