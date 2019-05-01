@@ -49,6 +49,7 @@ design/images/FgwwvW7P8Yfa3PAm5cRI9aaHag.png
 design/images/5sK13SCqPA3TPp2mC4JcyDxrU.png
 design/images/4plFe6AEgQdxT8jp8AIAmXNiy0.png
 design/images/3aiPofWjDQgrXUlU5bpeN6OGBw.png
+code/ToggleIcon.css
 build/style.css
 build/standalone.js
 build/react.development.js

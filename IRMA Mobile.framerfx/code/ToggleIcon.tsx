@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Data, Override, PropertyControls, ControlType, Stack, Size } from "framer";
-import styled, { injectGlobal } from 'styled-components'
+import { Data, Override, PropertyControls, ControlType, Stack, Size, Frame } from "framer";
+import './ToggleIcon.css';
 
+/*import styled, { injectGlobal } from 'styled-components'
 injectGlobal`
   @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-`
+`*/
 
 // Data to communicate between components using Overrides
 const data = Data({
@@ -116,42 +117,24 @@ export class ToggleIcon extends React.Component<Props> { //, State> {
   render() {
     const defaultIcon = ToggleIcon.defaultProps.icons[0];
     const defaultColor = ToggleIcon.defaultProps.colors[0];
-    const { colors, stretch, height, icons } = this.props;
+    const { colors, icons } = this.props;
     const icon = icons.length == 0 ? defaultIcon : icons[Math.min(data.index, icons.length - 1)];
     const color = colors.length == 0 ? defaultColor : colors[Math.min(data.index, colors.length - 1)];
+    const height = this.props.stretch ? this.props.height : 24;
+    const frameStyle = {display: "flex", background: "none", alignItems: "center", justifyContent: "center"} as React.CSSProperties;
+    const iconStyle = {color: color, fontSize: `${height}px !important`} as React.CSSProperties;
+    
 
     return (
-      <StyledIconFrame height={height} width={height} stretch={stretch} onClick={this.onToggle.bind(this)}>
+      <Frame height={height} width={height} style={frameStyle} onClick={this.onToggle.bind(this)}>
         <i
           className="material-icons mdc-button__icon"
           aria-hidden="true"
-          style={{ color: color }}
+          style={iconStyle}
         >
           {icon}
         </i>
-      </StyledIconFrame>
+      </Frame>
     )
   }
 }
-
-/* 
-** STYLED FRAME FOR WRAPPER COMPONENT
-** This maintains centering the icon within the parent Frame on the canvas.
-*/
-
-interface iconProps {
-stretch: boolean
-height: number
-}
-
-const StyledIconFrame = styled<iconProps, any>('div')`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-
-  i {
-  font-size: ${props => (props.stretch ? props.height : 24)}px !important;
-  }
-`
